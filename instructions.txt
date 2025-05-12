@@ -1,0 +1,4 @@
+1. conda create -n face_demo python=3.10.10
+2. conda activate face_demo
+3. conda install pytorch-cpu torchvision-cpu -c pytorch
+4. pip install -r requirements.txt 
