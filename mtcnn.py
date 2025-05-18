@@ -131,7 +131,7 @@ class MTCNN():
         width, height = image.size
         min_length = min(height, width)
 
-        min_detection_size = 12
+        pnet_input_size = 12
         factor = 0.707  # sqrt(0.5)
 
         # scales for scaling the image
@@ -140,11 +140,11 @@ class MTCNN():
         # scales the image so that
         # minimum size that we can detect equals to
         # minimum face size that we want to detect
-        m = min_detection_size/min_face_size
+        m = pnet_input_size/min_face_size
         min_length *= m
 
         factor_count = 0
-        while min_length > min_detection_size:
+        while min_length > pnet_input_size:
             scales.append(m*factor**factor_count)
             min_length *= factor
             factor_count += 1
